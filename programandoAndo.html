@@ -1,209 +1,165 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Programando Ando | Desarrollo de Software Moderno</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#3B82F6",
-                        "background-light": "#F8FAFC",
-                        "background-dark": "#0F172A",
-                    },
-                    fontFamily: {
-                        display: ["Plus Jakarta Sans", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.75rem",
-                    },
-                },
-            },
-        };
-    </script>
-<style>
-        .gradient-text-blue-pink {
-            background: linear-gradient(90deg, #3B82F6 0%, #EC4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-text-green {
-            background: linear-gradient(90deg, #10B981 0%, #059669 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-border-icon {
-            background: linear-gradient(135deg, #6366f1, #d946ef);
-            padding: 2px;
-        }
-        .hero-glow {
-            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
-        }
-        .dark .hero-glow {
-            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, rgba(15, 23, 42, 0) 70%);
-        }
-    </style>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Programando Ando | Desarrollo de Software Moderno</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css"/>
+
+    <!-- Configuración y comportamiento JS -->
+    <script src="js/main.js"></script>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-300">
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="w-10 h-10 rounded-xl gradient-border-icon flex items-center justify-center">
-<div class="bg-white dark:bg-slate-900 w-full h-full rounded-[10px] flex items-center justify-center">
-<span class="material-symbols-outlined text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-pink-500 font-bold">code</span>
-</div>
-</div>
-<span class="text-xl font-extrabold tracking-tight">Programando<span class="text-emerald-500">Ando</span></span>
-</div>
-<div class="hidden md:flex items-center gap-8 font-medium">
-<a class="hover:text-primary transition-colors" href="#">Servicios</a>
-<a class="hover:text-primary transition-colors" href="#">Portafolio</a>
-<a class="hover:text-primary transition-colors" href="#">Nosotros</a>
-<a class="hover:text-primary transition-colors" href="#">Contacto</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
-<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
-<span class="material-symbols-outlined hidden dark:block">light_mode</span>
-</button>
-<button class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition-all shadow-lg shadow-blue-500/20">
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl gradient-border-icon flex items-center justify-center">
+                    <div class="bg-white dark:bg-slate-900 w-full h-full rounded-[10px] flex items-center justify-center">
+                        <span class="material-symbols-outlined text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-pink-500 font-bold">code</span>
+                    </div>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight">Programando<span class="text-emerald-500">Ando</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a class="hover:text-primary transition-colors" href="#">Servicios</a>
+                <a class="hover:text-primary transition-colors" href="#">Portafolio</a>
+                <a class="hover:text-primary transition-colors" href="#">Nosotros</a>
+                <a class="hover:text-primary transition-colors" href="#">Contacto</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Cambiar tema">
+                    <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                </button>
+                <button class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition-all shadow-lg shadow-blue-500/20">
                     Empezar Proyecto
                 </button>
-</div>
-</div>
-</nav>
-<section class="relative pt-40 pb-20 overflow-hidden hero-glow">
-<div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-<div class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 animate-bounce">
-<span class="material-symbols-outlined text-indigo-500 text-sm">auto_awesome</span>
-<span class="text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400">Diseño Moderno 2026</span>
-</div>
-<div class="flex flex-col items-center mb-8">
-<div class="relative mb-8">
-<div class="w-32 h-32 rounded-3xl gradient-border-icon p-1.5 shadow-2xl">
-<div class="bg-white dark:bg-slate-900 w-full h-full rounded-[22px] flex items-center justify-center relative overflow-hidden">
-<span class="material-symbols-outlined text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-pink-500">code</span>
-<div class="absolute bottom-2 right-2 flex gap-1">
-<span class="w-2 h-4 bg-emerald-400 rounded-full"></span>
-<span class="w-2 h-4 bg-emerald-400 rounded-full"></span>
-</div>
-</div>
-</div>
-</div>
-<h1 class="text-7xl md:text-8xl font-black tracking-tighter mb-4 leading-none">
-<span class="gradient-text-blue-pink">Programando</span><br/>
-<span class="gradient-text-green">Ando</span>
-</h1>
-<p class="max-w-2xl mx-auto text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-40 pb-20 overflow-hidden hero-glow">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 animate-bounce">
+                <span class="material-symbols-outlined text-indigo-500 text-sm">auto_awesome</span>
+                <span class="text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400">Diseño Moderno 2026</span>
+            </div>
+            <div class="flex flex-col items-center mb-8">
+                <div class="relative mb-8">
+                    <div class="w-32 h-32 rounded-3xl gradient-border-icon p-1.5 shadow-2xl">
+                        <div class="bg-white dark:bg-slate-900 w-full h-full rounded-[22px] flex items-center justify-center relative overflow-hidden">
+                            <span class="material-symbols-outlined text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-pink-500">code</span>
+                            <div class="absolute bottom-2 right-2 flex gap-1">
+                                <span class="w-2 h-4 bg-emerald-400 rounded-full"></span>
+                                <span class="w-2 h-4 bg-emerald-400 rounded-full"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-7xl md:text-8xl font-black tracking-tighter mb-4 leading-none">
+                    <span class="gradient-text-blue-pink">Programando</span><br/>
+                    <span class="gradient-text-green">Ando</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                     Logo profesional con gradientes vibrantes para tu startup de desarrollo de software. Creamos el futuro digital con precisión y creatividad.
                 </p>
-</div>
-<div class="flex flex-wrap justify-center gap-4 mt-12">
-<button class="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2">
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 mt-12">
+                <button class="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2">
                     Ver Portafolio
                     <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                </button>
+                <button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
                     Nuestros Servicios
                 </button>
-</div>
-</div>
-<div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-40 dark:opacity-20">
-<div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-<div class="absolute top-1/3 -right-20 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-<div class="absolute -bottom-20 left-1/3 w-96 h-96 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-</div>
-</section>
-<section class="py-24 bg-white dark:bg-slate-900/50">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid md:grid-cols-3 gap-8">
-<div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all group">
-<div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">terminal</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Desarrollo Custom</h3>
-<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Software a medida diseñado para escalar junto con tu visión de negocio.</p>
-</div>
-<div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-pink-400 dark:hover:border-pink-500 transition-all group">
-<div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">brush</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Diseño UX/UI</h3>
-<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Experiencias visuales cautivadoras que retienen y deleitan a tus usuarios.</p>
-</div>
-<div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group">
-<div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">speed</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Optimización</h3>
-<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Código limpio y optimizado para el máximo rendimiento y velocidad.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-24 relative overflow-hidden">
-<div class="max-w-7xl mx-auto px-6">
-<div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
-<div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
-<div class="md:w-1/2">
-<div class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-8">
-<span class="material-symbols-outlined text-white text-sm">stars</span>
-<span class="text-sm font-bold uppercase tracking-widest">Modern Design 2026</span>
-</div>
-<h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Preparados para los desafíos del mañana.</h2>
-<p class="text-lg text-indigo-100 mb-8 leading-relaxed">Nuestra metodología integra las últimas tendencias en IA y Web3 para asegurar que tu producto sea relevante hoy y en el 2026.</p>
-<a class="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-bold hover:shadow-xl transition-all inline-block" href="#">Conoce el Proceso</a>
-</div>
-<div class="md:w-1/2 flex justify-center">
-<div class="relative w-full max-w-sm aspect-square bg-white/10 rounded-full flex items-center justify-center backdrop-blur-3xl animate-pulse">
-<img alt="Tech illustration" class="w-4/5 h-4/5 object-cover rounded-3xl rotate-3 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSgTkLL3m5IrGNMaNvHPby3D2sbk6iciZndFuubC7uoyhoLgE2V9iM3oNNUjCGAlqawJTNEkFj2ZfX35Th7ww5DVdBC6nhjGnWXEO5V43GVn282uwr7yWJmB_Bvu3OpqR6jPU3WlRfzO3GN0zYpizSBMaj6B5JlUFYdnBXoI_ADTayQTAHF7prKpYn4-sRYvqktNX6DoKAweAwQXCFPcfVgTXdVFWJARKGi2NewZazrDXlYAOu6pFY3w8k_iu3A0AConxBbyJmLRI"/>
-</div>
-</div>
-</div>
-<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
-</div>
-</div>
-</section>
-<footer class="py-12 border-t border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg gradient-border-icon flex items-center justify-center">
-<div class="bg-white dark:bg-slate-900 w-full h-full rounded-[7px] flex items-center justify-center">
-<span class="material-symbols-outlined text-xs text-indigo-500 font-bold">code</span>
-</div>
-</div>
-<span class="text-lg font-bold tracking-tight">Programando<span class="text-emerald-500">Ando</span></span>
-</div>
-<div class="flex gap-8 text-sm font-medium text-slate-500">
-<a class="hover:text-primary transition-colors" href="#">Términos</a>
-<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
-<a class="hover:text-primary transition-colors" href="#">Cookies</a>
-</div>
-<p class="text-sm text-slate-400">© 2024 Programando Ando. Todos los derechos reservados.</p>
-</div>
-</footer>
-<style>
-        @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-    </style>
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-40 dark:opacity-20">
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-1/3 -right-20 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-20 left-1/3 w-96 h-96 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        </div>
+    </section>
 
-</body></html>
+    <section class="py-24 bg-white dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all group">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Desarrollo Custom</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Software a medida diseñado para escalar junto con tu visión de negocio.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-pink-400 dark:hover:border-pink-500 transition-all group">
+                    <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">brush</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Diseño UX/UI</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Experiencias visuales cautivadoras que retienen y deleitan a tus usuarios.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group">
+                    <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">speed</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Optimización</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Código limpio y optimizado para el máximo rendimiento y velocidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-8">
+                            <span class="material-symbols-outlined text-white text-sm">stars</span>
+                            <span class="text-sm font-bold uppercase tracking-widest">Modern Design 2026</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Preparados para los desafíos del mañana.</h2>
+                        <p class="text-lg text-indigo-100 mb-8 leading-relaxed">Nuestra metodología integra las últimas tendencias en IA y Web3 para asegurar que tu producto sea relevante hoy y en el 2026.</p>
+                        <a class="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-bold hover:shadow-xl transition-all inline-block" href="#">Conoce el Proceso</a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="relative w-full max-w-sm aspect-square bg-white/10 rounded-full flex items-center justify-center backdrop-blur-3xl animate-pulse">
+                            <img alt="Tech illustration" class="w-4/5 h-4/5 object-cover rounded-3xl rotate-3 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSgTkLL3m5IrGNMaNvHPby3D2sbk6iciZndFuubC7uoyhoLgE2V9iM3oNNUjCGAlqawJTNEkFj2ZfX35Th7ww5DVdBC6nhjGnWXEO5V43GVn282uwr7yWJmB_Bvu3OpqR6jPU3WlRfzO3GN0zYpizSBMaj6B5JlUFYdnBXoI_ADTayQTAHF7prKpYn4-sRYvqktNX6DoKAweAwQXCFPcfVgTXdVFWJARKGi2NewZazrDXlYAOu6pFY3w8k_iu3A0AConxBbyJmLRI"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg gradient-border-icon flex items-center justify-center">
+                    <div class="bg-white dark:bg-slate-900 w-full h-full rounded-[7px] flex items-center justify-center">
+                        <span class="material-symbols-outlined text-xs text-indigo-500 font-bold">code</span>
+                    </div>
+                </div>
+                <span class="text-lg font-bold tracking-tight">Programando<span class="text-emerald-500">Ando</span></span>
+            </div>
+            <div class="flex gap-8 text-sm font-medium text-slate-500">
+                <a class="hover:text-primary transition-colors" href="#">Términos</a>
+                <a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+                <a class="hover:text-primary transition-colors" href="#">Cookies</a>
+            </div>
+            <p class="text-sm text-slate-400">© 2024 Programando Ando. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

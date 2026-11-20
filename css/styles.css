@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Estilos personalizados - Programando Ando
+   ========================================================================== */
+
+/* Gradientes de texto */
+.gradient-text-blue-pink {
+    background: linear-gradient(90deg, #3B82F6 0%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-green {
+    background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Borde con gradiente */
+.gradient-border-icon {
+    background: linear-gradient(135deg, #6366f1, #d946ef);
+    padding: 2px;
+}
+
+/* Efectos de resplandor (Hero Glow) */
+.hero-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+.dark .hero-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, rgba(15, 23, 42, 0) 70%);
+}
+
+/* Animaciones de esferas de fondo (Blobs) */
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
