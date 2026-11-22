@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Programando Ando | Desarrollo de Software Moderno</title>
+    <title>José Alfredo López Hernández | Desarrollador de Software & AppSheet Specialist</title>
+    <meta name="description" content="Portafolio profesional de José Alfredo López Hernández. Especialista en desarrollo de aplicaciones empresariales en AppSheet, automatizaciones con Google Apps Script, bases de datos y desarrollo web moderno.">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 
     <!-- Google Fonts & Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
 
     <!-- Estilos personalizados -->
@@ -18,148 +19,896 @@
     <!-- Configuración y comportamiento JS -->
     <script src="js/main.js"></script>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-300">
-    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-500 selection:text-white">
+
+    <!-- Barra de Navegación -->
+    <nav class="fixed top-0 w-full z-50 bg-white/85 dark:bg-slate-950/85 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 rounded-xl gradient-border-icon flex items-center justify-center">
+            <!-- Logotipo / Identidad -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl gradient-border-icon flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
                     <div class="bg-white dark:bg-slate-900 w-full h-full rounded-[10px] flex items-center justify-center">
-                        <span class="material-symbols-outlined text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-pink-500 font-bold">code</span>
+                        <span class="material-symbols-outlined text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 font-bold text-xl">code</span>
                     </div>
                 </div>
-                <span class="text-xl font-extrabold tracking-tight">Programando<span class="text-emerald-500">Ando</span></span>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight leading-none text-slate-900 dark:text-white">
+                        Programando<span class="text-emerald-500">Ando</span>
+                    </span>
+                    <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 tracking-wider">José Alfredo López</span>
+                </div>
+            </a>
+
+            <!-- Enlaces de Escritorio -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-slate-600 dark:text-slate-300 text-sm">
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#sobre-mi">Sobre Mí</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#habilidades">Habilidades</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#proyectos">Proyectos</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#experiencia">Trayectoria</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#contacto">Contacto</a>
             </div>
-            <div class="hidden md:flex items-center gap-8 font-medium">
-                <a class="hover:text-primary transition-colors" href="#">Servicios</a>
-                <a class="hover:text-primary transition-colors" href="#">Portafolio</a>
-                <a class="hover:text-primary transition-colors" href="#">Nosotros</a>
-                <a class="hover:text-primary transition-colors" href="#">Contacto</a>
+
+            <!-- Acciones Derecha -->
+            <div class="flex items-center gap-3">
+                <!-- Botón Modo Oscuro / Claro -->
+                <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Cambiar tema">
+                    <span class="material-symbols-outlined block dark:hidden text-slate-700 text-xl">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block text-amber-400 text-xl">light_mode</span>
+                </button>
+
+                <!-- Botón Contactar CTA -->
+                <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md shadow-blue-500/20 active:scale-95">
+                    <span>Hablemos</span>
+                    <span class="material-symbols-outlined text-base">chat</span>
+                </a>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Abrir menú">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
             </div>
-            <div class="flex items-center gap-4">
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Cambiar tema">
-                    <span class="material-symbols-outlined block dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
-                </button>
-                <button class="bg-primary text-white px-6 py-2.5 rounded-full font-semibold hover:opacity-90 transition-all shadow-lg shadow-blue-500/20">
-                    Empezar Proyecto
-                </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-4 space-y-3">
+            <a class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 py-1" href="#sobre-mi">Sobre Mí</a>
+            <a class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 py-1" href="#habilidades">Habilidades</a>
+            <a class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 py-1" href="#proyectos">Proyectos</a>
+            <a class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 py-1" href="#experiencia">Trayectoria</a>
+            <a class="mobile-nav-link block font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600 py-1" href="#contacto">Contacto</a>
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+                <a href="#contacto" class="w-full text-center block bg-blue-600 text-white py-2.5 rounded-xl font-semibold text-sm">Contáctame</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-40 pb-20 overflow-hidden hero-glow">
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm mb-12 animate-bounce">
-                <span class="material-symbols-outlined text-indigo-500 text-sm">auto_awesome</span>
-                <span class="text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400">Diseño Moderno 2026</span>
-            </div>
-            <div class="flex flex-col items-center mb-8">
-                <div class="relative mb-8">
-                    <div class="w-32 h-32 rounded-3xl gradient-border-icon p-1.5 shadow-2xl">
-                        <div class="bg-white dark:bg-slate-900 w-full h-full rounded-[22px] flex items-center justify-center relative overflow-hidden">
-                            <span class="material-symbols-outlined text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-pink-500">code</span>
-                            <div class="absolute bottom-2 right-2 flex gap-1">
-                                <span class="w-2 h-4 bg-emerald-400 rounded-full"></span>
-                                <span class="w-2 h-4 bg-emerald-400 rounded-full"></span>
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden hero-glow">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8">
+                
+                <!-- Columna Izquierda: Presentación y Título -->
+                <div class="lg:w-7/12 text-center lg:text-left">
+                    <!-- Badge de disponibilidad -->
+                    <div class="inline-flex items-center gap-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-2 rounded-full shadow-sm mb-6">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-300">Disponible para Proyectos & Empleo</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] mb-6">
+                        Hola, soy <br/>
+                        <span class="gradient-text-blue-pink">José Alfredo</span> <br/>
+                        <span class="gradient-text-green">López Hernández</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-8">
+                        <strong class="font-semibold text-slate-900 dark:text-white">Desarrollador de Software & Especialista en AppSheet</strong>. Transformo tareas operativas y flujos complejos en aplicaciones ágiles, bases de datos optimizadas y automatizaciones inteligentes que ahorran tiempo y dinero.
+                    </p>
+
+                    <!-- Badges de Destreza Clave -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 mb-10 text-xs sm:text-sm font-semibold">
+                        <span class="bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60 px-3.5 py-1.5 rounded-lg flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-base">apps</span> AppSheet & No-Code
+                        </span>
+                        <span class="bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60 px-3.5 py-1.5 rounded-lg flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-base">bolt</span> Google Apps Script
+                        </span>
+                        <span class="bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 px-3.5 py-1.5 rounded-lg flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-base">database</span> Normalización & SQL
+                        </span>
+                        <span class="bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 px-3.5 py-1.5 rounded-lg flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-base">translate</span> Inglés B2
+                        </span>
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#proyectos" class="bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all shadow-md flex items-center gap-2 group">
+                            <span>Ver Mis Proyectos</span>
+                            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                        <a href="https://github.com/AlfredoHernandez45" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base text-slate-800 dark:text-white transition-all flex items-center gap-2 shadow-sm">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            <span>GitHub Profile</span>
+                        </a>
+                        <a href="https://wa.me/529831560163" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all flex items-center gap-2 shadow-sm shadow-emerald-500/20">
+                            <span class="material-symbols-outlined text-lg">call</span>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta Fotográfica & Resumen -->
+                <div class="lg:w-5/12 flex justify-center">
+                    <div class="relative w-full max-w-sm">
+                        <!-- Glow de fondo -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 rounded-3xl blur-xl opacity-50 dark:opacity-40 animate-pulse"></div>
+                        
+                        <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                            <!-- Foto y Nombre -->
+                            <div class="flex items-center gap-4 mb-6 pb-6 border-b border-slate-100 dark:border-slate-800">
+                                <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden ring-4 ring-blue-500/30 flex-shrink-0 bg-slate-100 dark:bg-slate-800">
+                                    <img src="assets/profile.jpg" alt="José Alfredo López Hernández" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h3 class="font-extrabold text-slate-900 dark:text-white text-lg sm:text-xl leading-tight">José Alfredo López</h3>
+                                    <p class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-semibold mt-1">Ing. / Dev de Software</p>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">TecNM Chetumal (2018-2022)</p>
+                                </div>
+                            </div>
+
+                            <!-- Métricas / Destacados -->
+                            <div class="space-y-3.5 text-xs sm:text-sm">
+                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                                    <span class="text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-blue-500">task_alt</span> Enfoque
+                                    </span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">AppSheet & Automatización</span>
+                                </div>
+                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                                    <span class="text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-purple-500">terminal</span> Código & Repos
+                                    </span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">20+ Proyectos en GitHub</span>
+                                </div>
+                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                                    <span class="text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-emerald-500">translate</span> Idiomas
+                                    </span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">Inglés B2 / Español Nativo</span>
+                                </div>
+                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
+                                    <span class="text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-base text-amber-500">location_on</span> Ubicación
+                                    </span>
+                                    <span class="font-bold text-slate-800 dark:text-slate-200">México (Remoto disponible)</span>
+                                </div>
+                            </div>
+
+                            <!-- Botones rápidos de contacto en la card -->
+                            <div class="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 flex gap-2">
+                                <button onclick="copyToClipboard('jose16alfredo04@gmail.com', this)" class="flex-1 py-2 px-3 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-center gap-1.5 transition-colors" title="Copiar correo">
+                                    <span class="material-symbols-outlined text-sm">content_copy</span>
+                                    <span>Copiar Email</span>
+                                </button>
+                                <a href="mailto:jose16alfredo04@gmail.com" class="py-2 px-3 rounded-lg bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 text-xs font-semibold text-blue-600 dark:text-blue-400 flex items-center justify-center gap-1 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">mail</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <h1 class="text-7xl md:text-8xl font-black tracking-tighter mb-4 leading-none">
-                    <span class="gradient-text-blue-pink">Programando</span><br/>
-                    <span class="gradient-text-green">Ando</span>
-                </h1>
-                <p class="max-w-2xl mx-auto text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                    Logo profesional con gradientes vibrantes para tu startup de desarrollo de software. Creamos el futuro digital con precisión y creatividad.
-                </p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4 mt-12">
-                <button class="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform flex items-center gap-2">
-                    Ver Portafolio
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </button>
-                <button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-                    Nuestros Servicios
-                </button>
+
             </div>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-40 dark:opacity-20">
+
+        <!-- Elementos ambientales decorativos de fondo -->
+        <div class="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none opacity-40 dark:opacity-20 overflow-hidden">
             <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
             <div class="absolute top-1/3 -right-20 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
             <div class="absolute -bottom-20 left-1/3 w-96 h-96 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
     </section>
 
-    <section class="py-24 bg-white dark:bg-slate-900/50">
+    <!-- Sección Sobre Mí / Filosofía -->
+    <section id="sobre-mi" class="py-20 bg-white dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800/80">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-all group">
-                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-3xl">terminal</span>
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 px-3 py-1.5 rounded-md mb-4">
+                        <span class="material-symbols-outlined text-sm">person</span> Sobre Mí
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Desarrollo Custom</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Software a medida diseñado para escalar junto con tu visión de negocio.</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-6">
+                        Construyendo soluciones reales con código, lógica y perseverancia.
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                        Soy egresado del <strong class="text-slate-800 dark:text-slate-200">Instituto Tecnológico de Chetumal (TecNM)</strong>. Mi pasión es resolver problemas organizacionales y empresariales transformando procesos manuales desordenados en plataformas ágiles y funcionales.
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        Mi experiencia técnica destaca por la creación de soluciones en <strong class="text-slate-800 dark:text-slate-200">AppSheet</strong> conectadas a <strong class="text-slate-800 dark:text-slate-200">Google Workspace y bases relacionales</strong>, complementada con proyectos en <strong class="text-slate-800 dark:text-slate-200">Kotlin (AR con SceneView), Laravel API, PHP y JavaScript</strong>.
+                    </p>
+                    
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-500">
+                        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 italic">
+                            "Desde mis inicios aprendí que el esfuerzo, la constancia y la atención a los detalles son la base de cualquier trabajo bien hecho, ya sea fabricando block artesanal, gestionando mantenimiento o programando arquitecturas de software."
+                        </p>
+                    </div>
                 </div>
-                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-pink-400 dark:hover:border-pink-500 transition-all group">
-                    <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-3xl">brush</span>
+
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-5">
+                    <!-- Tarjeta 1 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-2xl">table_chart</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Bases de Datos & Normalización</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Diseño esquemas relacionales limpios usando Google Sheets o MySQL, asegurando integridad referencial, tablas intermedias y rapidez en consultas.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Diseño UX/UI</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Experiencias visuales cautivadoras que retienen y deleitan a tus usuarios.</p>
-                </div>
-                <div class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all group">
-                    <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-3xl">speed</span>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 hover:border-purple-400 dark:hover:border-purple-500 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-2xl">smart_toy</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Flujos & Bots de Automatización</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Configuración de bots, workflows automáticos, envío de reportes PDF periódicos y alertas inmediatas a través de correo electrónico.
+                        </p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Optimización</h3>
-                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Código limpio y optimizado para el máximo rendimiento y velocidad.</p>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 hover:border-pink-400 dark:hover:border-pink-500 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-900/40 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-2xl">integration_instructions</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Google Apps Script & APIs</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Extensión del comportamiento estándar de AppSheet y Google Workspace conectando servicios con scripts personalizados y APIs REST.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-2xl">code_blocks</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Desarrollo Multiplataforma</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Versatilidad para codificar en JavaScript, PHP/Laravel, Java y Kotlin, con experiencia en aplicaciones móviles con Realidad Aumentada.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 relative overflow-hidden">
+    <!-- Habilidades Técnicas Detalladas -->
+    <section id="habilidades" class="py-24 bg-slate-50/50 dark:bg-slate-950">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
-                <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
-                        <div class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full mb-8">
-                            <span class="material-symbols-outlined text-white text-sm">stars</span>
-                            <span class="text-sm font-bold uppercase tracking-widest">Modern Design 2026</span>
-                        </div>
-                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Preparados para los desafíos del mañana.</h2>
-                        <p class="text-lg text-indigo-100 mb-8 leading-relaxed">Nuestra metodología integra las últimas tendencias en IA y Web3 para asegurar que tu producto sea relevante hoy y en el 2026.</p>
-                        <a class="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-bold hover:shadow-xl transition-all inline-block" href="#">Conoce el Proceso</a>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center">
-                        <div class="relative w-full max-w-sm aspect-square bg-white/10 rounded-full flex items-center justify-center backdrop-blur-3xl animate-pulse">
-                            <img alt="Tech illustration" class="w-4/5 h-4/5 object-cover rounded-3xl rotate-3 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSgTkLL3m5IrGNMaNvHPby3D2sbk6iciZndFuubC7uoyhoLgE2V9iM3oNNUjCGAlqawJTNEkFj2ZfX35Th7ww5DVdBC6nhjGnWXEO5V43GVn282uwr7yWJmB_Bvu3OpqR6jPU3WlRfzO3GN0zYpizSBMaj6B5JlUFYdnBXoI_ADTayQTAHF7prKpYn4-sRYvqktNX6DoKAweAwQXCFPcfVgTXdVFWJARKGi2NewZazrDXlYAOu6pFY3w8k_iu3A0AConxBbyJmLRI"/>
-                        </div>
-                    </div>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 px-3 py-1.5 rounded-md mb-4">
+                    <span class="material-symbols-outlined text-sm">build</span> Stack & Capacidades
                 </div>
-                <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    Habilidades Técnicas Especializadas
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-4 text-base sm:text-lg">
+                    Dominio integral de tecnologías low-code/no-code para entrega ágil de valor, combinado con conocimientos profundos de desarrollo de software tradicional.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Skill 1: App Development en AppSheet -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">phone_android</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">AppSheet Development</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                        Creación de aplicaciones empresariales multiplataforma intuitivas:
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            UX/UI adaptativo para móviles, tablets y web
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Lógica de expresiones avanzadas y filtros dinámicos
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Acciones personalizadas (Actions) y navegación guiada
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill 2: Data Handling & Normalización -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">storage</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Manejo y Normalización de Datos</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                        Estructuración de datos escalable, sin redundancias y de fácil mantenimiento:
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Google Sheets como motor de base de datos relacional
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Tablas intermedias para relaciones N:M (muchos a muchos)
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Integración con bases de datos MySQL y conectores
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill 3: Automatización & Apps Script -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Automatización & Apps Script</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                        Extensión del potencial del ecosistema Google para operar sin intervención humana:
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Scripts en Google Apps Script para funciones avanzadas
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Bots programados y activados por eventos o cambios
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Generación automática de PDFs y almacenamiento en Google Drive
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill 4: Desarrollo Web Frontend -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">html</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Desarrollo Web Frontend</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                        Construcción de interfaces web interactivas, responsivas y accesibles:
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            HTML5 semántico, CSS3 moderno y preprocesador SASS
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            JavaScript moderno (ES6+), manipulación del DOM y eventos
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Tailwind CSS para interfaces limpias y veloces
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill 5: Backend & APIs -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">dns</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Backend & APIs REST</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                        Servicios y endpoints para conectar datos con aplicaciones:
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            PHP (Programación Orientada a Objetos) y arquitectura MVC
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Laravel: endpoints CRUD, subida y descarga de archivos
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Intercambio estructurado de datos con JSON y TypeScript
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill 6: Móvil, Java & Realidad Aumentada -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="material-symbols-outlined text-3xl">view_in_ar</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Android, Kotlin & AR</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                        Desarrollo de software nativo y tecnologías inmersivas:
+                    </p>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Kotlin & Android para aplicaciones móviles
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Realidad Aumentada (AR) integrando SceneView y ARCore
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                            Java y JavaFX para aplicaciones de escritorio y lógica orientada a objetos
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-2">
+    <!-- Sección de Proyectos Destacados (Showcase) -->
+    <section id="proyectos" class="py-24 bg-white dark:bg-slate-900/40 border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 px-3 py-1.5 rounded-md mb-3">
+                        <span class="material-symbols-outlined text-sm">folder_open</span> Portafolio
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                        Proyectos Destacados
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 mt-2 text-base">
+                        Soluciones empresariales personalizadas y proyectos de código abiertos en GitHub.
+                    </p>
+                </div>
+
+                <!-- Botones de Filtrado de Proyectos -->
+                <div class="flex flex-wrap gap-2 text-xs sm:text-sm font-semibold">
+                    <button class="project-filter-btn active px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all" data-filter="all">
+                        Todos
+                    </button>
+                    <button class="project-filter-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all" data-filter="appsheet">
+                        AppSheet & Negocios
+                    </button>
+                    <button class="project-filter-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all" data-filter="web">
+                        Web & Backend
+                    </button>
+                    <button class="project-filter-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 transition-all" data-filter="movil">
+                        Móvil & AR
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Tarjetas de Proyectos -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Proyecto 1: Gestor de Órdenes de Cambio -->
+                <div class="project-card flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-xl transition-all" data-category="appsheet">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">
+                                AppSheet & Sheets
+                            </span>
+                            <span class="material-symbols-outlined text-slate-400">published_with_changes</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5">
+                            Gestor de Órdenes de Cambio Empresarial
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Aplicación integral para la solicitud, revisión y aprobación de órdenes de cambio en proyectos técnicos. Cuenta con asignación automática de responsables, control de versiones, trazabilidad y alertas instantáneas por correo electrónico.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5 text-xs font-medium">
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">AppSheet UX</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Google Sheets DB</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Bots & Alertas</span>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 flex items-center justify-between text-xs text-slate-500">
+                            <span>Solución Empresarial</span>
+                            <span class="text-emerald-500 font-semibold flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">verified</span> Producción
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Mini CRM & Cotizador -->
+                <div class="project-card flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-xl transition-all" data-category="appsheet">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">
+                                CRM & Ventas
+                            </span>
+                            <span class="material-symbols-outlined text-slate-400">group_work</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5">
+                            Mini CRM & Seguimiento Comercial
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Sistema móvil y de escritorio para registrar prospectos, etapas del embudo de ventas, cotizaciones en PDF generadas al vuelo e historial de interacciones con clientes mediante Google Drive.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5 text-xs font-medium">
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Relaciones 1:N</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Apps Script PDF</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">KPIs en Vivo</span>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 flex items-center justify-between text-xs text-slate-500">
+                            <span>Automatización Comercial</span>
+                            <span class="text-emerald-500 font-semibold flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">verified</span> Producción
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Sistema de Solicitud de Vacaciones & RRHH -->
+                <div class="project-card flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-xl transition-all" data-category="appsheet">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">
+                                RRHH & Workflow
+                            </span>
+                            <span class="material-symbols-outlined text-slate-400">calendar_month</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5">
+                            Gestión de Vacaciones e Incidencias
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Plataforma de autoservicio para colaboradores: consulta de saldo de días disponibles en tiempo real, calendario de ausencias para jefaturas y aprobación de solicitudes mediante notificaciones y botones de 1 clic.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5 text-xs font-medium">
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">AppSheet Workflows</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Google Workspace</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Validaciones</span>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 flex items-center justify-between text-xs text-slate-500">
+                            <span>Optimización de RRHH</span>
+                            <span class="text-emerald-500 font-semibold flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">verified</span> Producción
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: AR TEC - Realidad Aumentada con SceneView (GitHub) -->
+                <div class="project-card flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-xl transition-all" data-category="movil">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300">
+                                Kotlin & SceneView
+                            </span>
+                            <span class="material-symbols-outlined text-slate-400">view_in_ar</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5">
+                            AR_TEC: App de Realidad Aumentada
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Aplicación móvil desarrollada en Kotlin utilizando el SDK SceneView y ARCore de Google. Permite proyectar e interactuar con modelos 3D geolocalizados y anclados al entorno real con iluminación y física realista.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5 text-xs font-medium">
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Kotlin</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">SceneView 3D</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">ARCore</span>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Android Nativo</span>
+                            <a href="https://github.com/AlfredoHernandez45/AR_TEC" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+                                <span>Ver en GitHub</span>
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Laravel API & File Management (GitHub) -->
+                <div class="project-card flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-xl transition-all" data-category="web">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300">
+                                Laravel & TypeScript
+                            </span>
+                            <span class="material-symbols-outlined text-slate-400">api</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5">
+                            Laravel-Api: CRUD & File Storage
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Servidor backend basado en Laravel que implementa un CRUD robusto para la carga, almacenamiento seguro y descarga de archivos mediante endpoints API RESTful listos para consumir por clientes frontend o móviles.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5 text-xs font-medium">
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">Laravel</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">TypeScript / PHP</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">REST API</span>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Backend Architecture</span>
+                            <a href="https://github.com/AlfredoHernandez45/Larave-Api" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+                                <span>Ver en GitHub</span>
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Sistema Web Cafetería & POO (GitHub) -->
+                <div class="project-card flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:shadow-xl transition-all" data-category="web">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300">
+                                PHP & MySQL
+                            </span>
+                            <span class="material-symbols-outlined text-slate-400">local_cafe</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5">
+                            Sistema Web para Cafetería
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            Aplicación web modular construida con PHP bajo el paradigma de Programación Orientada a Objetos (POO), integrando catálogo de productos, gestión de pedidos y base de datos relacional.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-5 text-xs font-medium">
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">PHP POO</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">MySQL</span>
+                            <span class="bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-600">JavaScript</span>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Desarrollo Web Full</span>
+                            <a href="https://github.com/AlfredoHernandez45/cafeteria" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+                                <span>Ver en GitHub</span>
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Llamado a ver más en GitHub -->
+            <div class="mt-14 text-center">
+                <a href="https://github.com/AlfredoHernandez45?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white font-semibold text-sm px-6 py-3 rounded-2xl transition-colors">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>Explora todos mis repositorios en GitHub (+20 proyectos)</span>
+                    <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trayectoria y Experiencia -->
+    <section id="experiencia" class="py-24 bg-slate-50/50 dark:bg-slate-950">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 px-3 py-1.5 rounded-md mb-4">
+                    <span class="material-symbols-outlined text-sm">history_edu</span> Recorrido
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    Experiencia & Formación
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base">
+                    Un camino construido con dedicación, superación personal y excelencia técnica continua.
+                </p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 sm:ml-8 space-y-12">
+                
+                <!-- Experiencia Profesional en Software & AppSheet -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white dark:ring-slate-950"></div>
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                                Desarrollador AppSheet & Automatizaciones
+                            </h3>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400">
+                                Experiencia Profesional
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                            Desarrollo de soluciones de software empresarial personalizadas orientadas a la optimización de procesos internos y la reducción de trabajo manual repetitivo.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-blue-500 text-sm mt-0.5">arrow_right</span>
+                                <span>Diseño e implementación de apps para gestión de órdenes de cambio, pequeños CRM y automatización de flujos operativos.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-blue-500 text-sm mt-0.5">arrow_right</span>
+                                <span>Normalización de bases de datos utilizando relaciones complejas, tablas intermedias y Google Sheets como backend fiable.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="material-symbols-outlined text-blue-500 text-sm mt-0.5">arrow_right</span>
+                                <span>Automatización de reportes ejecutivos, alertas automáticas y extensión de funcionalidades mediante <strong>Google Apps Script</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formación Universitaria -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-slate-950"></div>
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                                Educación Superior en Tecnología
+                            </h3>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400">
+                                2018 - 2022
+                            </span>
+                        </div>
+                        <h4 class="text-base font-semibold text-emerald-600 dark:text-emerald-400 mb-2">
+                            Instituto Tecnológico de Chetumal (TecNM)
+                        </h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Formación sólida en ingeniería de software, arquitectura de sistemas, diseño de bases de datos relacionales, estructuras de datos, programación móvil y proyectos de innovación tecnológica.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Trayectoria de esfuerzo y disciplina -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-white dark:ring-slate-950"></div>
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                                Ética Laboral & Superación Personal
+                            </h3>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                                Valores Fundamentales
+                            </span>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Previo y durante mis estudios universitarios, desempeñé labores en albañilería artesanal (elaboración de block sólido) y mantenimiento general en hogares. Esta experiencia forjó en mí una ética de trabajo intachable, puntualidad, resiliencia y un profundo respeto por resolver las necesidades de las personas con total entrega.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner / CTA Contacto -->
+    <section id="contacto" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 rounded-[2.5rem] p-8 sm:p-14 lg:p-20 text-white relative overflow-hidden shadow-2xl">
+                
+                <div class="relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Lado izquierdo: Mensaje de contacto -->
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full mb-6 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
+                            <span class="material-symbols-outlined text-sm text-emerald-300">chat</span>
+                            <span>Iniciemos una conversación</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-6 leading-tight">
+                            ¿Tienes un proyecto en mente o buscas optimizar tu negocio?
+                        </h2>
+                        <p class="text-blue-100 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
+                            Escríbeme o llámame directamente. Estoy disponible para colaborar en proyectos de desarrollo de software, creación de aplicaciones empresariales en AppSheet, consultoría o integraciones a medida.
+                        </p>
+
+                        <!-- Datos de Contacto Rápidos -->
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <!-- Email -->
+                            <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-white">email</span>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <span class="text-xs text-blue-200 block">Correo Electrónico</span>
+                                    <button onclick="copyToClipboard('jose16alfredo04@gmail.com', this)" class="text-xs sm:text-sm font-bold text-white hover:underline truncate block text-left" title="Copiar correo">
+                                        jose16alfredo04@gmail.com
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Teléfono / WhatsApp -->
+                            <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-white">call</span>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-blue-200 block">Teléfono / WhatsApp</span>
+                                    <a href="https://wa.me/529831560163" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-bold text-white hover:underline">
+                                        +52 983 156 0163
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lado derecho: Tarjeta de Acciones Directas -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+                            <h3 class="text-xl font-bold text-white mb-2">Canales Directos</h3>
+                            <p class="text-xs sm:text-sm text-blue-100 mb-4">
+                                Haz clic en cualquiera de las siguientes opciones para ponerte en contacto inmediato conmigo:
+                            </p>
+
+                            <!-- Enlace WhatsApp -->
+                            <a href="https://wa.me/529831560163?text=Hola%20Jos%C3%A9%20Alfredo,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all shadow-lg active:scale-95 text-sm sm:text-base">
+                                <span class="material-symbols-outlined text-xl">chat</span>
+                                <span>Mensaje por WhatsApp</span>
+                            </a>
+
+                            <!-- Enlace Enviar Correo -->
+                            <a href="mailto:jose16alfredo04@gmail.com?subject=Contacto%20desde%20Portafolio%20Web" class="w-full bg-white hover:bg-slate-100 text-slate-900 font-bold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all shadow-lg active:scale-95 text-sm sm:text-base">
+                                <span class="material-symbols-outlined text-xl text-blue-600">mail</span>
+                                <span>Enviar Correo</span>
+                            </a>
+
+                            <!-- Enlace GitHub -->
+                            <a href="https://github.com/AlfredoHernandez45" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-950/60 hover:bg-slate-950/80 text-white font-bold py-3 px-6 rounded-2xl flex items-center justify-center gap-2.5 transition-all border border-white/20 active:scale-95 text-sm">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>Ver Perfil de GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Efectos de luz en el banner -->
+                <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-colors">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded-lg gradient-border-icon flex items-center justify-center">
                     <div class="bg-white dark:bg-slate-900 w-full h-full rounded-[7px] flex items-center justify-center">
                         <span class="material-symbols-outlined text-xs text-indigo-500 font-bold">code</span>
                     </div>
                 </div>
-                <span class="text-lg font-bold tracking-tight">Programando<span class="text-emerald-500">Ando</span></span>
+                <span class="text-base font-extrabold tracking-tight text-slate-800 dark:text-white">
+                    Programando<span class="text-emerald-500">Ando</span>
+                </span>
+                <span class="text-slate-400 text-xs hidden sm:inline">| Portafolio de José Alfredo López</span>
             </div>
-            <div class="flex gap-8 text-sm font-medium text-slate-500">
-                <a class="hover:text-primary transition-colors" href="#">Términos</a>
-                <a class="hover:text-primary transition-colors" href="#">Privacidad</a>
-                <a class="hover:text-primary transition-colors" href="#">Cookies</a>
+
+            <div class="flex gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#sobre-mi">Sobre Mí</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#proyectos">Proyectos</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://github.com/AlfredoHernandez45" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="#contacto">Contacto</a>
             </div>
-            <p class="text-sm text-slate-400">© 2024 Programando Ando. Todos los derechos reservados.</p>
+
+            <p class="text-xs sm:text-sm text-slate-400">
+                © 2026 José Alfredo López Hernández. Todos los derechos reservados.
+            </p>
         </div>
     </footer>
+
+    <!-- Toast Notification al copiar datos -->
+    <div id="copy-toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-sm font-semibold opacity-0 pointer-events-none translate-y-4 transition-all duration-300">
+        <span class="material-symbols-outlined text-emerald-400 dark:text-emerald-600 text-lg">check_circle</span>
+        <span>¡Copiado al portapapeles!</span>
+    </div>
+
 </body>
 </html>
