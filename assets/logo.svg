@@ -19,7 +19,19 @@
   </g>
   <path d="M108 68 L92 132" stroke="url(#code)" stroke-width="12" stroke-linecap="round"/>
   <g fill="#22c55e">
-    <ellipse cx="158" cy="158" rx="11" ry="16"/>
-    <ellipse cx="178" cy="158" rx="11" ry="16"/>
+    <g transform="translate(150 152) rotate(-18)">
+      <ellipse cx="0" cy="6" rx="10" ry="14"/>
+      <ellipse cx="-12" cy="-10" rx="4.5" ry="6"/>
+      <ellipse cx="-4" cy="-15" rx="4.5" ry="6"/>
+      <ellipse cx="4" cy="-15" rx="4.5" ry="6"/>
+      <ellipse cx="12" cy="-10" rx="4.5" ry="6"/>
+    </g>
+    <g transform="translate(176 152) rotate(18)">
+      <ellipse cx="0" cy="6" rx="10" ry="14"/>
+      <ellipse cx="-12" cy="-10" rx="4.5" ry="6"/>
+      <ellipse cx="-4" cy="-15" rx="4.5" ry="6"/>
+      <ellipse cx="4" cy="-15" rx="4.5" ry="6"/>
+      <ellipse cx="12" cy="-10" rx="4.5" ry="6"/>
+    </g>
   </g>
 </svg>
