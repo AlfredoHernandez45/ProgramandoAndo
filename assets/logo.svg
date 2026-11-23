@@ -18,14 +18,20 @@
     <path d="M118 78 L142 100 L118 122"/>
   </g>
   <path d="M108 68 L92 132" stroke="url(#code)" stroke-width="12" stroke-linecap="round"/>
-  <g fill="#22c55e">
-    <g transform="translate(148 150) rotate(-18)">
-      <path d="M-9 -18 C-13 -6 -13 6 -9 14 C-5 20 5 20 9 14 C13 6 13 -6 9 -18 C6 -24 -6 -24 -9 -18 Z"/>
-      <ellipse cx="0" cy="24" rx="9" ry="7"/>
+  <g fill="#4ade80">
+    <g transform="translate(140 146) rotate(-22)">
+      <path d="M-13 -22 C-18 -8 -18 8 -13 18 C-9 26 9 26 13 18 C18 8 18 -8 13 -22 C9 -30 -9 -30 -13 -22 Z"/>
+      <rect x="-11" y="-10" width="22" height="4" rx="2" fill="#0b0b12" opacity="0.35"/>
+      <rect x="-11" y="0" width="22" height="4" rx="2" fill="#0b0b12" opacity="0.35"/>
+      <ellipse cx="0" cy="36" rx="12" ry="9"/>
+      <rect x="-9" y="34" width="18" height="4" rx="2" fill="#0b0b12" opacity="0.35"/>
     </g>
-    <g transform="translate(176 150) rotate(18)">
-      <path d="M-9 -18 C-13 -6 -13 6 -9 14 C-5 20 5 20 9 14 C13 6 13 -6 9 -18 C6 -24 -6 -24 -9 -18 Z"/>
-      <ellipse cx="0" cy="24" rx="9" ry="7"/>
+    <g transform="translate(172 152) rotate(22)">
+      <path d="M-13 -22 C-18 -8 -18 8 -13 18 C-9 26 9 26 13 18 C18 8 18 -8 13 -22 C9 -30 -9 -30 -13 -22 Z"/>
+      <rect x="-11" y="-10" width="22" height="4" rx="2" fill="#0b0b12" opacity="0.35"/>
+      <rect x="-11" y="0" width="22" height="4" rx="2" fill="#0b0b12" opacity="0.35"/>
+      <ellipse cx="0" cy="36" rx="12" ry="9"/>
+      <rect x="-9" y="34" width="18" height="4" rx="2" fill="#0b0b12" opacity="0.35"/>
     </g>
   </g>
 </svg>
