@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ejemplo Servicios de Alberca — Landing demo | ProgramandoAndo</title>
+<meta name="description" content="Ejemplo de página de servicios de alberca creada como demostración de trabajo frontend. Contenido e imágenes de ejemplo."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+body{font-family:'Plus Jakarta Sans',sans-serif}
+.hero{background:linear-gradient(135deg,#0c4a6e 0%,#0284c7 55%,#38bdf8 100%)}
+.before-after{position:relative;overflow:hidden;border-radius:1.5rem}
+.before-after img{width:100%;height:420px;object-fit:cover;display:block}
+.before-after .after{position:absolute;inset:0;clip-path:inset(0 0 0 var(--pos,50%))}
+.before-after input{position:absolute;inset:0;width:100%;opacity:0;cursor:ew-resize}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+<header class="bg-white border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="../index.html" class="font-extrabold text-slate-900">Programando<span class="text-emerald-500">Ando</span></a>
+    <span class="text-xs font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full">Ejemplo demo</span>
+  </div>
+</header>
+
+<main>
+<section class="hero text-white">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="text-cyan-200 font-bold tracking-widest text-sm uppercase mb-3">Servicios de alberca • Ejemplo</p>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">Tu alberca limpia, sin estrés</h1>
+      <p class="text-cyan-100 text-lg mb-8">Landing de ejemplo inspirada en una página de servicios de alberca. Muestra hero, antes/después interactivo, paquetes de servicio, cotización y formulario. Contenido e imágenes son de demostración.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#servicios" class="bg-white text-slate-900 font-bold px-6 py-3 rounded-xl">Ver servicios</a>
+        <a href="#cotizar" class="border border-white/40 text-white font-bold px-6 py-3 rounded-xl">Pedir cotización</a>
+      </div>
+    </div>
+    <img src="https://picsum.photos/seed/pool-hero/900/600" alt="Alberca ejemplo" class="rounded-3xl shadow-2xl w-full h-72 object-cover"/>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-14">
+  <h2 class="text-3xl font-black mb-3 text-center">Transformaciones</h2>
+  <p class="text-slate-600 text-center mb-8">Desliza la barra para ver el antes y el después (ejemplo).</p>
+  <div class="before-after max-w-4xl mx-auto shadow-xl" id="ba">
+    <img src="https://picsum.photos/seed/pool-before/1200/600" alt="Antes ejemplo"/>
+    <div class="after"><img src="https://picsum.photos/seed/pool-after/1200/600" alt="Después ejemplo"/></div>
+    <span class="absolute top-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded-full">ANTES</span>
+    <span class="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded-full">DESPUÉS</span>
+    <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después" oninput="document.getElementById('ba').style.setProperty('--pos', this.value+'%')"/>
+  </div>
+</section>
+
+<section id="servicios" class="bg-white border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-6 py-14">
+    <h2 class="text-3xl font-black mb-8 text-center">Servicios</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-slate-200 rounded-3xl p-7">
+        <p class="text-xs font-bold uppercase tracking-wider text-cyan-600 mb-2">Semanal</p>
+        <h3 class="text-xl font-extrabold mb-3">Limpieza semanal</h3>
+        <ul class="text-sm text-slate-600 space-y-2 mb-6">
+          <li>• Cepillado de paredes y piso</li>
+          <li>• Aspirado de fondo</li>
+          <li>• Revisión de química del agua</li>
+          <li>• Limpieza de canastillas</li>
+        </ul>
+        <a href="#cotizar" class="inline-block bg-cyan-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm">Pedir cotización</a>
+      </div>
+      <div class="border-2 border-cyan-500 rounded-3xl p-7 shadow-lg">
+        <p class="text-xs font-bold uppercase tracking-wider text-cyan-600 mb-2">Más popular</p>
+        <h3 class="text-xl font-extrabold mb-3">Mantenimiento completo</h3>
+        <ul class="text-sm text-slate-600 space-y-2 mb-6">
+          <li>• Todo lo del paquete semanal</li>
+          <li>• Revisión de bomba y filtro</li>
+          <li>• Ajuste de pH y cloro</li>
+          <li>• Reporte con fotos</li>
+        </ul>
+        <a href="#cotizar" class="inline-block bg-cyan-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm">Pedir cotización</a>
+      </div>
+      <div class="border border-slate-200 rounded-3xl p-7">
+        <p class="text-xs font-bold uppercase tracking-wider text-cyan-600 mb-2">Especial</p>
+        <h3 class="text-xl font-extrabold mb-3">Recuperación de agua verde</h3>
+        <ul class="text-sm text-slate-600 space-y-2 mb-6">
+          <li>• Diagnóstico de la química</li>
+          <li>• Choque y clarificación</li>
+          <li>• Filtración intensiva</li>
+          <li>• Seguimiento 48 h</li>
+        </ul>
+        <a href="#cotizar" class="inline-block bg-cyan-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm">Pedir cotización</a>
+      </div>
+    </div>
+    <img src="https://picsum.photos/seed/pool-service/1200/500" alt="Servicio ejemplo" class="rounded-3xl w-full h-64 object-cover mt-10"/>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 py-14">
+  <h2 class="text-3xl font-black mb-8 text-center">Paquetes de químicos</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="bg-slate-900 text-white rounded-3xl p-8">
+      <h3 class="text-xl font-extrabold mb-2">Paquete arranque</h3>
+      <p class="text-slate-300 mb-4">Para albercas hasta 20,000 litros.</p>
+      <ul class="text-sm text-slate-300 space-y-2 mb-6">
+        <li>• Cloro granulado</li>
+        <li>• Ajustador de pH</li>
+        <li>• Alguicida</li>
+      </ul>
+      <a href="#cotizar" class="inline-block bg-white text-slate-900 font-bold px-5 py-2.5 rounded-xl text-sm">Cotizar</a>
+    </div>
+    <div class="bg-white border border-slate-200 rounded-3xl p-8">
+      <h3 class="text-xl font-extrabold mb-2">Paquete premium</h3>
+      <p class="text-slate-600 mb-4">Para albercas hasta 40,000 litros.</p>
+      <ul class="text-sm text-slate-600 space-y-2 mb-6">
+        <li>• Todo el paquete arranque</li>
+        <li>• Clarificador</li>
+        <li>• Antisarro</li>
+        <li>• Kit de pruebas</li>
+      </ul>
+      <a href="#cotizar" class="inline-block bg-cyan-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm">Cotizar</a>
+    </div>
+  </div>
+</section>
+
+<section id="cotizar" class="bg-cyan-700 text-white">
+  <div class="max-w-4xl mx-auto px-6 py-14">
+    <h2 class="text-3xl font-black mb-3">Formulario de servicio (demo)</h2>
+    <p class="text-cyan-100 mb-8">Ejemplo de formulario de contratación. En una página real, aquí iría la conexión a correo, WhatsApp o CRM.</p>
+    <form class="grid md:grid-cols-2 gap-4" onsubmit="alert('Ejemplo demo: formulario enviado (simulado)'); return false;">
+      <input required placeholder="Nombre" class="rounded-xl px-4 py-3 text-slate-900"/>
+      <input required type="tel" placeholder="Teléfono / WhatsApp" class="rounded-xl px-4 py-3 text-slate-900"/>
+      <select class="rounded-xl px-4 py-3 text-slate-900"><option>Limpieza semanal</option><option>Mantenimiento completo</option><option>Recuperación de agua verde</option></select>
+      <input placeholder="Tamaño de alberca (litros)" class="rounded-xl px-4 py-3 text-slate-900"/>
+      <textarea placeholder="Cuéntanos qué necesita tu alberca" class="md:col-span-2 rounded-xl px-4 py-3 text-slate-900 h-28"></textarea>
+      <button class="md:col-span-2 bg-white text-cyan-800 font-bold px-6 py-3.5 rounded-xl">Enviar solicitud demo</button>
+    </form>
+    <p class="text-cyan-100 mt-8 text-sm">Ejemplo creado por José Alfredo López Hernández — Desarrollador Frontend & AppSheet Specialist. Contenido e imágenes de demostración.</p>
+    <a href="../index.html#proyectos" class="inline-block mt-4 border border-white/40 text-white font-bold px-6 py-3 rounded-xl">Volver al portafolio</a>
+  </div>
+</section>
+</main>
+</body>
+</html>
