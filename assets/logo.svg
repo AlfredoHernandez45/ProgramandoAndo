@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="ProgramandoAndo logo">
+  <defs>
+    <linearGradient id="outer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="code" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="184" height="184" rx="48" fill="url(#outer)"/>
+  <rect x="34" y="34" width="132" height="132" rx="28" fill="#0b0b12"/>
+  <g fill="none" stroke="url(#code)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M82 78 L58 100 L82 122"/>
+    <path d="M118 78 L142 100 L118 122"/>
+  </g>
+  <path d="M108 68 L92 132" stroke="url(#code)" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#22c55e">
+    <ellipse cx="158" cy="158" rx="11" ry="16"/>
+    <ellipse cx="178" cy="158" rx="11" ry="16"/>
+  </g>
+</svg>
